@@ -1,0 +1,56 @@
+.game {
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.game .imgs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    justify-content: space-around;
+    margin-left: 2%;
+}
+
+.game img {
+    max-width: 380px;
+    min-width: 200px;
+    border-radius: 20px;
+}
+
+.game h3 {
+    text-align: center;
+    font-size: 3rem;
+    color: aliceblue;
+    margin-inline-start: 2%;
+
+}
+
+.game p {
+    margin-top: -10px;
+    color: aliceblue;
+    margin-inline-start: 2%;
+    margin-inline-end: 2%;
+    font-size: 1.3rem;
+}
+
+.game a {
+    text-align: center;
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: rgb(23, 220, 23);
+    margin-top: 2%;
+}
+
+.game h4{
+    color: aliceblue;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.game .requirements {
+    margin-top: -10px;
+    color: aliceblue;
+    margin-inline-start: 2%;
+    margin-inline-end: 2%;
+}

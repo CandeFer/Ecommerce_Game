@@ -1,0 +1,197 @@
+main .fyg {
+  display: flex;
+  flex-direction: row;
+
+}
+
+main .fyg .gyb {
+  display: grid;
+  flex-direction: column;
+}
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(3, 325px);
+  gap: 30px;
+  padding: 2rem 0 2rem 4rem;
+  position: relative;
+}
+
+input {
+  height: 30px;
+}
+
+.card {
+  display: flex;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  width: 280px;
+  height: 320px;
+  border: solid 1px;
+  border-color: #ffffff;
+
+
+}
+
+
+.card img {
+  max-width: 100%;
+  min-width: 50%;
+  min-height: 100%;
+  height: 150px;
+  border-radius: 20px;
+  filter: blur(1px);
+  opacity: 0.5;
+}
+
+.card-data {
+  color: aliceblue;
+  z-index: 20;
+  position: absolute;
+  width: 280px;
+
+}
+
+.card-data h3 {
+  z-index: 10;
+  font-size: 1.3rem;
+  margin-inline-start: 2%;
+  width: 120px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden
+}
+
+.card-data h4 {
+  font-size: 12px;
+  margin-inline-start: 2%;
+}
+
+.card-data .description {
+  margin-inline-start: 2%;
+  margin-inline-end: 2%;
+  font-size: 12px;
+}
+
+.card-data .description .des {
+  width: 100%;
+}
+
+.card-data .description button {
+  justify-content: center;
+  width: 32%;
+  background-color: #434343;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 34%;
+  margin-top: 10px;
+}
+
+.card-data .description .detalle {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.card-data .description .more {
+  width: 32%;
+  background-color: #434343;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 34%;
+}
+
+.card-data .button {
+  display: flex;
+  width: 380px;
+}
+
+.nombre_iconos {
+  display: flex;
+}
+
+
+.platforms {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 140px;
+  z-index: 10;
+
+}
+
+.platforms ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 25px;
+
+}
+
+.platforms ul li {
+  margin-left: 6px;
+  color: aliceblue;
+}
+
+.card-data .button {
+  width: 280px;
+}
+
+
+.card-data .button button {
+  width: 30%;
+  height: 30px;
+  margin-top: 10px;
+  background-color: #5ebc54;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 36%;
+  font-size: 1.3rem;
+}
+
+samp {
+  font-weight: 500;
+}
+
+.card-data .description {
+  display: flex;
+  flex-direction: column;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+}
+
+.pages button {
+  width: 25%;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  background-color:#434343;
+  color: aliceblue;
+  margin-left:1rem ;
+}
+
+@media (max-width: 900px) {
+  .games {
+    grid-template-columns: repeat(2, 340px);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .games {
+    grid-template-columns: repeat(1, 540px);
+    gap: 70px;
+    margin-left: 25%;
+  }
+}

@@ -1,0 +1,29 @@
+.tags{
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    font-family: 'Nunito', sans-serif;
+    margin: 5%;
+}
+
+.tags .cardT{
+    width: 70%;
+    border:  1px solid aliceblue;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.tags .cardT img{
+    max-width: 100%;
+}
+
+.tags .cardT h3{
+    color: aliceblue;
+    text-align: center;
+
+}
+
+.tags .cardT p{
+    color: aliceblue;
+    text-align: center;
+}

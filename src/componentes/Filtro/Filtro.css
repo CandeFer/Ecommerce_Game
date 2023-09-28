@@ -1,0 +1,49 @@
+.filter {
+    border-radius: 0 10px 10px 0;
+    border: 1px solid #f0f0f0;
+    font-family: 'Nunito', sans-serif;
+    margin-top: 32px;
+    padding: 10px;
+    margin-left: -1px;
+    position: sticky;
+    top: 10px;
+    height: 750px;
+}
+
+.filter section {
+    margin-top: -10px;
+}
+
+.filter section h3 {
+    color: #747171;
+    text-align: center;
+    font-size: 1.4rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+.filter section ul {
+    margin-top: -10px;
+    list-style: none;
+    margin-inline-start: 0;
+    padding-inline-start: 0px;
+}
+
+.filter section ul li {
+    display: flex;
+    margin-bottom: 5px;
+    border: 1px solid rgb(60, 61, 61) ;
+    border-left:0px ;
+    border-right: 0px;
+    color: aliceblue;
+}
+
+.filter section ul li label {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.filter section ul li label input {
+    height: 17px;
+    margin-right: 10px;
+}

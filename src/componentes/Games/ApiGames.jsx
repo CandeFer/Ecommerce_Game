@@ -1,17 +1,14 @@
-/* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState, useContext } from "react";
 import Games from "./Games";
 import Pages from "../Pagination/Pages";
 import Filtro from "../Filtro/Filtro";
-import { urlG } from "../url";
-
-
+import { ApiContext } from "../../Context/Api";
 
 function ApiGames() {
-  const [url, setUrl] = useState(urlG);
+  const { apiUrl, updateApi } = useContext(ApiContext);
   const [games, setGames] = useState([]);
   const [data, setData] = useState([]);
-  
 
   const fetchData = (newUrl) => {
     fetch(newUrl)
@@ -19,18 +16,17 @@ function ApiGames() {
       .then((data) => {
         setData(data);
         setGames(data.results);
-        setUrl(newUrl);
+        // Actualiza el contexto solo después de obtener los datos
+        updateApi(newUrl);
       })
       .catch((err) => console.log(err));
   };
-
 
   const handleNextPage = () => {
     if (data.next) {
       fetchData(data.next);
     }
   };
-
 
   const handlePrevPage = () => {
     if (data.previous) {
@@ -39,31 +35,23 @@ function ApiGames() {
   };
 
   useEffect(() => {
-    if (games.length === 0) {
-      fetchData(url);
-    }
-  }, [games, url]);
-  
- 
-
+      fetchData(apiUrl);
+  }, [apiUrl]);
 
   return (
-    <>
-      <main>
-        {
-          games ?
-            (
-              <div className="fyg">
-                <Filtro fetchData ={fetchData }/>
-                <div className="gyb">
-                <Games games={games} />
-                <Pages data={data} handleNextPage={handleNextPage} handlePrevPage={handlePrevPage} />
-                </div>
-              </div>) :
-            <p>Cargando</p>
-        }
-      </main>
-    </>
+    <main>
+      {games ? (
+        <div className="fyg">
+          <Filtro fetchData={fetchData} />
+          <div className="gyb">
+            <Games games={games} />
+            <Pages data={data} handleNextPage={handleNextPage} handlePrevPage={handlePrevPage} />
+          </div>
+        </div>
+      ) : (
+        <p>Cargando</p>
+      )}
+    </main>
   );
 }
 

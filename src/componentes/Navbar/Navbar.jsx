@@ -1,15 +1,34 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-// import { useState } from 'react'
+import { useState, useContext} from 'react'
+import { urlG, urlS } from '../url'
+import { ApiContext } from '../../Context/Api.jsx'
 
 
 function Navbar() {
 
-    // const [quest, setquest] = useState("")
+    const [writing, setWriting] = useState()
+    const { apiUrl,  updateApi  } = useContext(ApiContext)
 
-    // const quest = (e) => {
-    //     setSearch(e.target.value)
-    // }
+    const Write = (e) => {
+
+        setWriting(e.target.value)
+        console.log(writing)
+
+    }
+
+    const Search = () => {
+            if (writing === '') {
+                updateApi(urlG)
+            } else {
+                updateApi(urlS + writing)
+                
+            }
+            setWriting('')
+        console.log(apiUrl)
+    }
+
 
     return (
         <>
@@ -21,8 +40,8 @@ function Navbar() {
                 </ul>
 
                 <div className="search-box">
-                    <input type="text" placeholder="Search" />
-                    <button>Search</button>
+                    <input type="text"  onChange={Write} placeholder="Search" />
+                    <button onClick={Search}>Search</button>
                 </div>
 
                 <ul className="right-section">

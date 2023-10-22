@@ -15,6 +15,7 @@ function CheckboxList({ title, items, fetchData }) {
   useEffect(() => {
     if (changes) {
       setChanges(false);
+      console.log(ids)
       fetchData(urlG + ids);
     }
   }, [ids, fetchData]);

@@ -6,7 +6,7 @@ const DescriptionG = ({ id }) => {
   const [description, setDescription] = useState("");
 
   useEffect(() => {
-    fetch(`https://api.rawg.io/api/games/${id}?key=add3d397e8e24312a9a6391a38b80e1d`)
+    fetch(`https://api.rawg.io/api/games/${id}?key=77de9fb94b994de394a6196e63d31851`)
       .then((response) => response.json())
       .then((data) => setDescription(data.description_raw))
       .catch((error) => {

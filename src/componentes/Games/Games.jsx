@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 
 const Games = ({ games }) => {
-    console.log(games)
+    // console.log(games);
     const [search, setSearch] = useState("")
 
 

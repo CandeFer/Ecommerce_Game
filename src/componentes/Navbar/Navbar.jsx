@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useState, useContext} from 'react'
 import { urlG, urlS } from '../url'
 import { ApiContext } from '../../Context/Api.jsx'
+import SearchTool from '../Search/Search.jsx'
 
 
 function Navbar() {
@@ -23,12 +24,10 @@ function Navbar() {
                 updateApi(urlG)
             } else {
                 updateApi(urlS + writing)
-                
             }
             setWriting('')
         console.log(apiUrl)
     }
-
 
     return (
         <>
@@ -39,10 +38,11 @@ function Navbar() {
                     <li><Link to='/'>Games</Link></li>
                 </ul>
 
-                <div className="search-box">
-                    <input type="text"  onChange={Write} placeholder="Search" />
+                <SearchTool Write={Write} Search={Search}/>
+                {/* <div className="search-box">
+                    <input type="text" onChange={Write} placeholder="Search" />
                     <button onClick={Search}>Search</button>
-                </div>
+                </div> */}
 
                 <ul className="right-section">
                     <li><a href="#"><i className="bi bi-cart"></i></a></li>
@@ -53,5 +53,5 @@ function Navbar() {
         </>
     )
 }
-export default Navbar
+export default Navbar;
 

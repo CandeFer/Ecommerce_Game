@@ -2,12 +2,10 @@
     border-radius: 0 10px 10px 0;
     border: 1px solid #f0f0f0;
     font-family: 'Nunito', sans-serif;
-    margin-top: 32px;
     padding: 10px;
-    margin-left: -1px;
-    position: sticky;
-    top: 10px;
-    height: 750px;
+    height: fit-content;
+    width: 105px;
+    margin: 2rem 0 2rem -1px;
 }
 
 .filter section {

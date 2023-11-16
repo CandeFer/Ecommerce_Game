@@ -4,16 +4,20 @@ main .fyg {
 
 }
 
-main .fyg .gyb {
+/* main .fyg .gyb {
   display: grid;
   flex-direction: column;
-}
+} */
 
 .games {
-  display: grid;
-  grid-template-columns: repeat(3, 325px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* display: grid; */
+  /* grid-template-columns: repeat(3, 325px); */
   gap: 30px;
-  padding: 2rem 0 2rem 4rem;
+  /* padding: 2rem 0 2rem 4rem; */
+  margin: 2rem 0;
   position: relative;
 }
 
@@ -30,8 +34,7 @@ input {
   height: 320px;
   border: solid 1px;
   border-color: #ffffff;
-
-
+  justify-content: space-around;
 }
 
 
@@ -71,7 +74,7 @@ input {
 .card-data .description {
   margin-inline-start: 2%;
   margin-inline-end: 2%;
-  font-size: 12px;
+  font-size: 1rem;
 }
 
 .card-data .description .des {
@@ -145,14 +148,17 @@ input {
 .card-data .button button {
   width: 30%;
   height: 30px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   background-color: #5ebc54;
   color: #ffffff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  margin-left: 36%;
-  font-size: 1.3rem;
+  position: absolute;
+  top: 272px;
+  left: 98px;
+  /* margin-left: 36%; */
+  /* font-size: 1.3rem; */
 }
 
 samp {
@@ -179,9 +185,10 @@ samp {
   background-color:#434343;
   color: aliceblue;
   margin-left:1rem ;
+  cursor: pointer;
 }
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
   .games {
     grid-template-columns: repeat(2, 340px);
     gap: 30px;
@@ -194,4 +201,4 @@ samp {
     gap: 70px;
     margin-left: 25%;
   }
-}
+} */

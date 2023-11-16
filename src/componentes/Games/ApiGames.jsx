@@ -25,12 +25,20 @@ function ApiGames() {
   const handleNextPage = () => {
     if (data.next) {
       fetchData(data.next);
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     }
   };
 
   const handlePrevPage = () => {
     if (data.previous) {
       fetchData(data.previous);
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     }
   };
 

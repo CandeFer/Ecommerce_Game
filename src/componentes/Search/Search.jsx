@@ -8,15 +8,12 @@ const SearchTool = ({ Search, Write }) => {
     const [screenWidth, setScreenWidth] = useState(window.screen.width);
     const [search, setSearch] = useState([]);
 
-
     useEffect(() => {
         fetch(urlG + '&search=halo')
             .then((response) => response.json())
             .then((data) => setSearch(data))
             .catch((err) => console.log(err))
     }, []);
-
-
 
     useEffect(() => {
         // Función para actualizar el estado del ancho de la pantalla
@@ -40,7 +37,7 @@ const SearchTool = ({ Search, Write }) => {
     return (
         <>
             {
-                screenWidth < 575
+                screenWidth < 650
                     ?
                     <box-icon name='search' color='#ffffff' ></box-icon>
                     :

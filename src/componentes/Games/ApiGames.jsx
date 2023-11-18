@@ -3,6 +3,7 @@ import { useEffect, useState, useContext } from "react";
 import Games from "./Games";
 import Pages from "../Pagination/Pages";
 import Filtro from "../Filtro/Filtro";
+import FiltroMobile from "../Filtro/FiltroMobile";
 import { ApiContext } from "../../Context/Api";
 
 function ApiGames() {
@@ -43,19 +44,22 @@ function ApiGames() {
   };
 
   useEffect(() => {
-      fetchData(apiUrl);
+    fetchData(apiUrl);
   }, [apiUrl]);
 
   return (
     <main>
       {games ? (
-        <div className="fyg">
-          <Filtro fetchData={fetchData} />
-          <div className="gyb">
-            <Games games={games} />
-            <Pages data={data} handleNextPage={handleNextPage} handlePrevPage={handlePrevPage} />
+        <>
+          <div className="fyg">
+            <FiltroMobile fetchData={fetchData}/>
+            <Filtro fetchData={fetchData} />
+            <div className="gyb">
+              <Games games={games} />
+              <Pages data={data} handleNextPage={handleNextPage} handlePrevPage={handlePrevPage} />
+            </div>
           </div>
-        </div>
+        </>
       ) : (
         <p>Cargando</p>
       )}

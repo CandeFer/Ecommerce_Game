@@ -45,3 +45,51 @@
     height: 17px;
     margin-right: 10px;
 }
+
+.mobileFilterBtn{
+    display: none;
+}
+
+@media (max-width: 407px){
+
+    .fyg{
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    .filter{
+        display: none;
+    }
+
+    .mobileFilterBtn{
+        display: inline-block;
+        width: 3rem;
+        height: 1.5rem;
+        border: none;
+        border-radius: 5px;
+        margin-top: 2rem;
+        background: #747171;
+    }
+    
+    .mobileFilter:active{
+        background-color: #555;
+    }
+
+    .filter-mobile{
+        position: absolute;
+        top: 5rem;
+        z-index: 40;
+        border-radius: 0 10px 10px 0;
+        border: 1px solid #f0f0f0;
+        font-family: 'Nunito', sans-serif;
+        padding: 10px;
+        height: fit-content;
+        width: 105px;
+        margin: 2rem 0 2rem -1px;
+        background-color: #000;
+    }
+    
+    .open{
+        display: block;
+    }
+}

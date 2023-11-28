@@ -4,9 +4,6 @@ import { useState, useEffect } from 'react';
 import { urlG } from '../url';
 import './Filtro.css'
 
-
-
-
 function CheckboxList({ title, items, fetchData }) {
   const [checkboxes, setCheckboxes] = useState({});
   const [ids, setIds] = useState('');

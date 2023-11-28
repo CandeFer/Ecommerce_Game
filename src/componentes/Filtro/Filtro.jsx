@@ -4,9 +4,6 @@ import { useState, useEffect } from 'react';
 import { urlG } from '../url';
 import './Filtro.css'
 
-
-
-
 function CheckboxList({ title, items, fetchData }) {
   const [checkboxes, setCheckboxes] = useState({});
   const [ids, setIds] = useState('');
@@ -86,7 +83,7 @@ function CheckboxList({ title, items, fetchData }) {
 
 
 
-function Filtro({fetchData}) {
+function Filtro({fetchData, showFilters}) {
   const categories = [
     { title: 'Indie', id: 51, category: 'genres' },
     { title: 'Adventure', id: 3, category: 'genres' },
@@ -97,7 +94,7 @@ function Filtro({fetchData}) {
     { title: 'Sports', id: 15, category: 'genres' },
     { title: 'Action', id: 4, category: 'genres' },
     { title: 'Fighting', id: 6, category: 'genres' },
-    { title: 'Casual', id: 40, category: 'genres' },
+    { title: 'Casual', id: 40, category: 'genres' }
   ];
 
   const platforms = [
@@ -111,12 +108,12 @@ function Filtro({fetchData}) {
     { title: 'Playstation 2', id: 27, category: 'platform' },
     { title: 'Nintendo Switch', id: 7, category: 'platform' },
     { title: 'Wii', id: 11, category: 'platform' },
-    { title: 'Android', id: 21, category: 'platform' },
+    { title: 'Android', id: 21, category: 'platform' }
   ];
 
 
   return (
-    <div className='filter'>
+    <div className={`filter filter-mobile ${showFilters ? 'open' : ''}`}>
       <CheckboxList className='genres' title="Genres" items={categories} fetchData={fetchData} />
       <CheckboxList className='platfomrs' title="Platforms" items={platforms} fetchData={fetchData}  />
     </div>

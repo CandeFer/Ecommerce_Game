@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { urlG } from "../url";
 import 'boxicons';
+import Navbar from "../Navbar/Navbar";
 
 
 const SearchTool = ({ Search, Write }) => {
@@ -36,6 +37,9 @@ const SearchTool = ({ Search, Write }) => {
 
     return (
         <>
+            <header>
+                <Navbar />
+            </header>
             {
                 screenWidth < 650
                     ?

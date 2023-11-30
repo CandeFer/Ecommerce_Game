@@ -48,22 +48,25 @@ function ApiGames() {
   }, [apiUrl]);
 
   return (
-    <main>
-      {games ? (
-        <>
-          <div className="fyg">
-            <FiltroMobile fetchData={fetchData}/>
-            <Filtro fetchData={fetchData} />
-            <div className="gyb">
-              <Games games={games} />
-              <Pages data={data} handleNextPage={handleNextPage} handlePrevPage={handlePrevPage} />
+    <>
+      
+      <main>
+        {games ? (
+          <>
+            <div className="fyg">
+              <FiltroMobile fetchData={fetchData}/>
+              <Filtro fetchData={fetchData} />
+              <div className="gyb">
+                <Games games={games} />
+                <Pages data={data} handleNextPage={handleNextPage} handlePrevPage={handlePrevPage} />
+              </div>
             </div>
-          </div>
-        </>
-      ) : (
-        <p>Cargando</p>
-      )}
-    </main>
+          </>
+        ) : (
+          <p>Cargando</p>
+        )}
+      </main>
+    </>
   );
 }
 

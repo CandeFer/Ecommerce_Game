@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Tags from "./Tags"
 import { urlT } from "../url"
+import Navbar from "../Navbar/Navbar"
 
 function ApiTags() {
   const [tags, setTags] = useState([])
@@ -13,6 +14,9 @@ function ApiTags() {
 
   return (
     <>
+      <header>
+        <Navbar />
+      </header>
       <Tags tags={tags} />
     </>
   )

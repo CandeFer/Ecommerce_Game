@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Developers from "./Developers"
 import { urlDe } from "../url"
+import Navbar from "../Navbar/Navbar.jsx"
 
 
 function ApiDevelopers() {
@@ -15,6 +16,9 @@ function ApiDevelopers() {
 
     return (
         <>
+            <header>
+                <Navbar />
+            </header>
             <div>
             <Developers developers={developers} />
             </div>

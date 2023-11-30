@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
+import Navbar from '../Navbar/Navbar';
 import './Game.css'
 import { useState, useEffect } from "react";
 
@@ -23,29 +24,33 @@ const Game = () => {
     console.log('Paso')
 
     return (
+        <>
+            <header>
+                <Navbar />
+            </header>
+            <div className='game' key={game.id}>
+                <div className='imgs'>
+                <img src={game.background_image} alt="" />
+                <img src={game.background_image_additional} alt="" />
+                </div>
+                <h3>{game.name}</h3>
+                <p>{game.description_raw}</p>
+                <a href={game.website}>Website</a>
 
-        <div className='game' key={game.id}>
-            <div className='imgs'>
-            <img src={game.background_image} alt="" />
-            <img src={game.background_image_additional} alt="" />
+                {
+                    game.platforms && game.platforms.map((platform, index) => (
+                        <div className='requirements' key={index}>
+                            <h4>{platform.requirements.recommended}</h4>
+                            <h4>{platform.requirements.minimum}</h4>
+
+                        </div>
+                    ))
+                }
+
+
+
             </div>
-            <h3>{game.name}</h3>
-            <p>{game.description_raw}</p>
-            <a href={game.website}>Website</a>
-
-            {
-                game.platforms && game.platforms.map((platform, index) => (
-                    <div className='requirements' key={index}>
-                        <h4>{platform.requirements.recommended}</h4>
-                        <h4>{platform.requirements.minimum}</h4>
-
-                    </div>
-                ))
-            }
-
-
-
-        </div>
+        </>
     );
 };
 
